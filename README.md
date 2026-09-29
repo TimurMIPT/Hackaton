@@ -28,20 +28,8 @@ python construction_app.py
 
 ## Метки модели YOLO
 
-Модуль `yolo_detector.py` загружает `best.pt`, вызывает `YOLO(model_path).predict(image_path, conf=0.3, verbose=False)` и считает **каждый объект** по `result.boxes.cls`. Метки переводятся перед проверкой правил:
-
-| Метка в датасете | Ключ проекта | Название в отчёте |
-|---|---|---|
-| `Excavator` | `excavator` | Экскаватор |
-| `Cran little` | `mobile_crane` | Автокран |
-| `Cran` | `tower_crane` | Кран |
-| `Samosval` | `dump_truck` | Самосвал |
-| `Concrete mixer` | `mixer` | Автобетоносмеситель |
-| `Katok` | `roller` | Каток |
-| `Svayi` | `pile_rig` | Свайная установка |
+Модуль `yolo_detector.py` загружает `best.pt`, вызывает `YOLO(model_path).predict(image_path, conf=0.3, verbose=False)` и считает **каждый объект** по `result.boxes.cls`. 
 | `Buldozer` | `bulldozer` | Бульдозер |
-
-Например, два объекта `Excavator` и один `Samosval` дают `{"excavator": 2, "dump_truck": 1}`. Регистр букв и лишние пробелы в метке игнорируются; неизвестная метка вызывает ошибку с её названием. Если вы переименуете классы датасета, обновите `LABEL_TO_MACHINE` в `yolo_detector.py`. Модель загружается один раз для повторных снимков в запущенном приложении.
 
 ## Как формируется решение
 
