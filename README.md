@@ -69,7 +69,7 @@ python construction_app.py
 
 | Файл | Назначение |
 |---|---|
-| `construction_app.py`, `start_app.pyw` | Настольное приложение и запуск двойным щелчком на Windows |
+| `construction_app.py`, `start_app.pyw` | Настольное приложение и запуск |
 | `yolo_detector.py` | Загрузка весов YOLO, перевод восьми меток и подсчёт объектов |
 | `construction_monitor.py` | Общий алгоритм, запуск YOLO, HTML-отчёт и CLI |
 | `rules.json` | Каталог строк, классов, профилей, правил и порогов |
